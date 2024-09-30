@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Programme {
 
@@ -24,8 +26,17 @@ public class Programme {
         int projectCount = 0;
         int basicProjectCount = 0;
         int bachelorProjectCount = 0;
+        int subjectModuleProjectCount = 0;
         int totalCourseECTS = 0;
         int basicCourseECTS = 0;
+
+        Set<StudyActivity> uniqueActivities = new HashSet<>(activities);
+
+        // Tjekker for dublikanter
+        if (uniqueActivities.size() != activities.size()) {
+            System.out.println("Activities found twice");
+            return false;
+        }
 
         // Gennemgå alle aktiviteter
         for (StudyActivity activity : activities) {
@@ -37,6 +48,8 @@ public class Programme {
                     bachelorProjectCount++;
                 } else if (project.isBasicProject()) {
                     basicProjectCount++;
+                } else {
+                    subjectModuleProjectCount++;
                 }
             } else if (activity instanceof Course) {
                 Course course = (Course) activity;
@@ -48,7 +61,35 @@ public class Programme {
             }
         }
 
+// Check that the total number of projects is exactly 6
+        boolean validProjects = projectCount == 6 && basicProjectCount == 3 && bachelorProjectCount == 1 && subjectModuleProjectCount == 2;
+
+        // Check course ECTS requirements
+        boolean validCourses = totalCourseECTS >= 50 && basicCourseECTS >= 40;
+
+        if (!validProjects) {
+            System.out.println("Not enough projects or projects not associated with modules");
+        }
+        if (!validCourses) {
+            System.out.println("Not enough ECTS points. Must have at least 50 total and 40 basic.");
+        }
+
+        return validProjects && validCourses;
+    }
+
+    public List<StudyActivity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<StudyActivity> activities) {
+        this.activities = activities;
+    }
+}
+
         /*
+
+        Yelong's gamle kode, min nye er sat oven over.
+
         Valideringsregler nedenunder.
         Vi tjekker om:
         - Der er 6 projekter i alt.
@@ -60,7 +101,7 @@ public class Programme {
         til at virke :-)
 
         Vi laver 2 større if/else checks, 1 for projekter og 1 for point
-         */
+
         boolean validProjects = true;
 
         if (projectCount != 6) {
@@ -108,4 +149,4 @@ public class Programme {
     public void setActivities(List<StudyActivity> activities) {
         this.activities = activities;
     }
-}
+} */

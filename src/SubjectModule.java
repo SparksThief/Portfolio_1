@@ -5,19 +5,18 @@ public class SubjectModule {
     private List<Course> courses;
     private Project project;
 
-    public List<Course> getCourses(){
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
+    public void SetCourses(List<Course> courses) {
+        int totalECTS = courses.stream().mapToInt(Course::getECTS).sum();
+        if (totalECTS !=20) {
+            throw new IllegalArgumentException("A subject module must have exactly 20 ECTS in courses.");
+        }
         this.courses = courses;
     }
 
-    public Project getProject(){
-        return project;
-    }
-
-    public void setProject(Project project) {
+    public void SetProject(Project project) {
+        if (project.getECTS() !=15) {
+            throw new IllegalArgumentException("A subject module must have exactly 15 ECTS in projects.");
+        }
         this.project = project;
     }
 }
