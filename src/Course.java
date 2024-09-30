@@ -1,6 +1,6 @@
 public class Course extends StudyActivity {
     private boolean isBasicCourse;
-// Heeeej virker den her test??????????
+
     //Constructor
     public Course(int ECTS, boolean isBasicCourse) {
         super(ECTS); //Kalder konstruktøren fra StudyActivity klassen
