@@ -1,0 +1,56 @@
+@startuml
+' Klassen Programme, der har en liste af StudyActivity
+' Et Programme kan bestå af mange studieaktiviteter,
+' som enten er kurser eller projekter
+class Programme {
+    List<StudyActivity> activities
+    + boolean isValid()
+    + void addActivity(StudyActivity activity)
+    + List<StudyActivity> getActivities()
+    + void setActivities(List<StudyActivity> activities)
+}
+
+' StudyActivity er en Abstrakt klasse
+' fordi både Course og Project handler om ECTS points
+abstract class StudyActivity {
+    int ECTS
+    + int getECTS()
+    + void setECTS(int ECTS)
+}
+
+' Kursus, der arver fra StudyActivity
+' Tjekker om det er et basicCourse
+class Course extends StudyActivity {
+    boolean isBasicCourse
+    + boolean isBasicCourse()
+    + void setBasicCourse(boolean isBasicCourse)
+}
+
+' Projekt, der arver fra StudyActivity
+' Tjekker om det er et bachelorProject og et basicProject
+class Project extends StudyActivity {
+    boolean isBachelorProject
+    boolean isBasicProject
+    + boolean isBachelorProject()
+    + void setBachelorProject(boolean isBachelorProject)
+    + boolean isBasicProject()
+    + void setBasicProject(boolean isBasicProject)
+}
+
+' SubjectModule indeholder kurser og et projekt
+class SubjectModule {
+    List<Course> courses
+    Project project
+    + List<Course> getCourses()
+    + void setCourses(List<Course> courses)
+    + Project getProject()
+    + void setProject(Project project)
+}
+
+' Forbindelser mellem klasserne
+Programme *-- StudyActivity
+Course --|> StudyActivity
+Project --|> StudyActivity
+SubjectModule o-- Course
+SubjectModule *-- Project
+@enduml
