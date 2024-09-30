@@ -1,3 +1,4 @@
+// Skaber Course subclass der extender (nedarver) StudyActivity.
 public class Course extends StudyActivity {
     private boolean isBasicCourse;
 

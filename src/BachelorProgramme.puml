@@ -1,4 +1,6 @@
 @startuml
+'idea.disableSyntaxCheck
+'idea.partialRender
 ' Klassen Programme, der har en liste af StudyActivity
 ' Et Programme kan bestå af mange studieaktiviteter,
 ' som enten er kurser eller projekter
@@ -10,7 +12,7 @@ class Programme {
     + void setActivities(List<StudyActivity> activities)
 }
 
-' StudyActivity er en Abstrakt klasse
+' StudyActivity er en abstract class
 ' fordi både Course og Project handler om ECTS points
 abstract class StudyActivity {
     int ECTS

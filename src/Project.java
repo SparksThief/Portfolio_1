@@ -1,21 +1,24 @@
+// Skaber Project subclass der extender (nedarver) StudyActivity.
 public class Project extends StudyActivity {
+    /*
+     Tilføjer to boolean instance variabler. To forskellige projektvariabler skal laves
+     eftersom der er et krav om 1 bachelorprojekt og 3 basisprojekter.
+     */
     private boolean isBachelorProject;
     private boolean isBasicProject;
 
-    /*
-    Jeg blev nødt til at introducere en ekstra variabel isBasicProject,
-    som skal bruges til at validere om det er et basic projekt eller ikke
-    og som hellere ikke er et bachelorprojekt. Ellers ville den tro, at alle
-    projekter som ikke er bachelorprojekt, er samme type basic projekt
-    også vil den ikke godtage, at mindst 3 skal være basic for så tror den at alle
-    er basic projekter.
-     */
+    // Skaber constructor med instance variablerne.
     public Project(boolean isBachelorProject, boolean isBasicProject) {
-        super(15); //15 fordi alle projekter vægter 15 ECTS point
+       // Kalder superclass (StudyActivity) constructor 'ECTS' og giver værdien 15 fordi alle projekter vægter 15 ECTS point.
+        super(15);
         this.isBachelorProject = isBachelorProject;
         this.isBasicProject = isBasicProject;
     }
 
+    /*
+     Bruger Getter method til at muliggøre at andre dele af programmet (Main) kan checke instance variablerne
+     og returnere en true/false værdi.
+     */
     public boolean isBasicProject() {
         return isBasicProject;
     }
@@ -24,6 +27,7 @@ public class Project extends StudyActivity {
         return isBachelorProject;
     }
 
+    // Bruger Setter method til bachelorProject så variablen kan sættes af andre dele af programmet.
     public void setBachelorProject(boolean bachelorProject) {
         this.isBachelorProject = bachelorProject;
     }
