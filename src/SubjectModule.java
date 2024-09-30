@@ -1,5 +1,6 @@
 import java.util.List;
 
+// Tilføjer ny class som indeholder en liste over courses og variablen project.
 public class SubjectModule {
     private List<Course> courses;
     private Project project;
