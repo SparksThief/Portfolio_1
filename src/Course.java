@@ -1,6 +1,5 @@
 public class Course extends StudyActivity {
     private boolean isBasicCourse;
-    //hejsa kan man se det her?
 
     //Constructor
     public Course(int ECTS, boolean isBasicCourse) {
