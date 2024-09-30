@@ -31,4 +31,8 @@ public class Project extends StudyActivity {
     public void setBachelorProject(boolean bachelorProject) {
         this.isBachelorProject = bachelorProject;
     }
+
+    public void setBasicProject(boolean basicProject) {
+        this.isBasicProject = basicProject;
+    }
 }
