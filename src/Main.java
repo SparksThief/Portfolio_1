@@ -15,8 +15,8 @@ public class Main {
          * 3 af projekterne skal være grundprojekter og IKKE bachelorprojekter
          * 1 projekt skal være bachelorprojekt
          *
-         * Der skal være 50 samlet ECTS point
-         * Mindt 40 af de 50 point skal være fra grundkurser
+         * Der skal være 50 samlet ECTs point
+         * Mindst 40 af de 50 point skal være fra grundkurser
          * Der må ikke være dubletter af aktiviteter
          */
 
@@ -37,7 +37,7 @@ public class Main {
         programme.addActivity(new Project(true, false));
 
         // Tilføj x antal kurser
-        // HUSK! mindst 50 point samlet og mindt 40 point fra grundkursus
+        // HUSK! mindst 50 point samlet og mindst 40 point fra grundkursus
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));

@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="db27c84c-1657-4e73-87e2-dd623fb9e41b" name="Changes" comment="Hej virker det her?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portfolio_1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio_1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgrammeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="UML Sequence" />
       </list>
     </option>
   </component>
@@ -35,12 +37,12 @@
     &quot;assignee&quot;: &quot;SparksThief&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SparksThief/Portfolio_1.git",
-    "accountId": "69066726-673d-41cf-8440-0a1bcf4837ff"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SparksThief/Portfolio_1.git&quot;,
+    &quot;accountId&quot;: &quot;69066726-673d-41cf-8440-0a1bcf4837ff&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -53,8 +55,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Sequence",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.MainTest1.executor": "Run",
+    "JUnit.ProgrammeTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -66,6 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
