@@ -61,34 +61,8 @@ public class Programme {
             }
         }
 
-// Check that the total number of projects is exactly 6
-        boolean validProjects = projectCount == 6 && basicProjectCount == 3 && bachelorProjectCount == 1 && subjectModuleProjectCount == 2;
-
-        // Check course ECTS requirements
-        boolean validCourses = totalCourseECTS >= 50 && basicCourseECTS >= 40;
-
-        if (!validProjects) {
-            System.out.println("Not enough projects or projects not associated with modules");
-        }
-        if (!validCourses) {
-            System.out.println("Not enough ECTS points. Must have at least 50 total and 40 basic.");
-        }
-
-        return validProjects && validCourses;
-    }
-
-    public List<StudyActivity> getActivities() {
-        return activities;
-    }
-
-    public void setActivities(List<StudyActivity> activities) {
-        this.activities = activities;
-    }
-}
 
         /*
-
-        Yelong's gamle kode, min nye er sat oven over.
 
         Valideringsregler nedenunder.
         Vi tjekker om:
@@ -100,7 +74,7 @@ public class Programme {
         Det med grundprojekter drillede og skulle bare have det -
         til at virke :-)
 
-        Vi laver 2 større if/else checks, 1 for projekter og 1 for point
+        Vi laver 2 større if/else checks, 1 for projekter og 1 for point */
 
         boolean validProjects = true;
 
@@ -149,4 +123,4 @@ public class Programme {
     public void setActivities(List<StudyActivity> activities) {
         this.activities = activities;
     }
-} */
+}
