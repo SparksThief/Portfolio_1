@@ -1,38 +1,36 @@
-// Skaber Project subclass der extender (nedarver) StudyActivity.
 public class Project extends StudyActivity {
-    /*
-     Tilføjer to boolean instance variabler. To forskellige projektvariabler skal laves
-     eftersom der er et krav om 1 bachelorprojekt og 3 basisprojekter.
-     */
     private boolean isBachelorProject;
     private boolean isBasicProject;
+    private SubjectModule subjectModule; // Reference til SubjectModule
 
-    // Skaber constructor med instance variablerne.
-    public Project(boolean isBachelorProject, boolean isBasicProject) {
-       // Kalder superclass (StudyActivity) constructor 'ECTS' og giver værdien 15 fordi alle projekter vægter 15 ECTS point.
-        super(15);
+    public Project(boolean isBachelorProject, boolean isBasicProject, SubjectModule subjectModule) {
+        super(15); // Alle projekter er 15 ECTS
         this.isBachelorProject = isBachelorProject;
         this.isBasicProject = isBasicProject;
-    }
-
-    /*
-     Bruger Getter method til at muliggøre at andre dele af programmet (Main) kan checke instance variablerne
-     og returnere en true/false værdi.
-     */
-    public boolean isBasicProject() {
-        return isBasicProject;
+        this.subjectModule = subjectModule;
     }
 
     public boolean isBachelorProject() {
         return isBachelorProject;
     }
 
-    // Bruger Setter method til bachelorProject så variablen kan sættes af andre dele af programmet.
     public void setBachelorProject(boolean bachelorProject) {
         this.isBachelorProject = bachelorProject;
     }
 
+    public boolean isBasicProject() {
+        return isBasicProject;
+    }
+
     public void setBasicProject(boolean basicProject) {
         this.isBasicProject = basicProject;
+    }
+
+    public SubjectModule getSubjectModule() {
+        return subjectModule;
+    }
+
+    public void setSubjectModule(SubjectModule subjectModule) {
+        this.subjectModule = subjectModule;
     }
 }
