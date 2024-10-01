@@ -6,11 +6,11 @@ public class SubjectModule {
     private List<Course> courses;
     private Project project;
 
-    // Getter - Giver andre klasser adgang til at læse værdien af variablen courses.
+    // Getter så andre dele af programmet kan læse værdien af variablen.
     public List<Course> getCourses() {
         return courses;
     }
-    // Setter - Giver andre klasser adgang til at ændre/opdatere værdien af variablen courses.
+    // Setter så andre dele af programmet kan opdatere variablen.
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }

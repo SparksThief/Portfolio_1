@@ -22,7 +22,7 @@ public class Programme {
     }
 
 
-    // Validerer om bachelorprogrammet er gyldigt
+    // Validerer om bachelorprogrammet er gyldigt.
     public boolean isValid() {
         int projectCount = 0;
         int basicProjectCount = 0;
