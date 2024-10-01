@@ -6,7 +6,7 @@ import java.util.Set;
 public class Programme {
 
     private List<StudyActivity> activities;
-    private Set<SubjectModule> subjectModules; // Hold styr på unikke SubjectModules
+    private final Set<SubjectModule> subjectModules; // Hold styr på unikke SubjectModules
 
     // Constructor
     public Programme() {
@@ -17,13 +17,11 @@ public class Programme {
     // Tilføj en aktivitet til programmet
     public void addActivity(StudyActivity activity) {
         activities.add(activity);
-        if (activity instanceof Course) {
-            Course course = (Course) activity;
+        if (activity instanceof Course course) {
             if (course.getSubjectModule() != null) {
                 subjectModules.add(course.getSubjectModule());
             }
-        } else if (activity instanceof Project) {
-            Project project = (Project) activity;
+        } else if (activity instanceof Project project) {
             if (project.getSubjectModule() != null) {
                 subjectModules.add(project.getSubjectModule());
             }
@@ -40,8 +38,7 @@ public class Programme {
 
         // Gennemgå alle aktiviteter og tæl kurser og projekter
         for (StudyActivity activity : activities) {
-            if (activity instanceof Project) {
-                Project project = (Project) activity;
+            if (activity instanceof Project project) {
                 projectCount++;
 
                 if (project.isBachelorProject()) {
@@ -49,8 +46,7 @@ public class Programme {
                 } else if (project.isBasicProject()) {
                     basicProjectCount++;
                 }
-            } else if (activity instanceof Course) {
-                Course course = (Course) activity;
+            } else if (activity instanceof Course course) {
                 totalCourseECTS += course.getECTS();
 
                 if (course.isBasicCourse()) {

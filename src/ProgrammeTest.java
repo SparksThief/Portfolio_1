@@ -1,118 +1,110 @@
+// File: ProgrammeTest.java
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProgrammeTest {
 
     @Test
-    void testProgrammeInitialization() {
-        Programme programme = new Programme();
-        assertNotNull(programme.getActivities(), "Activities list should be initialized.");
-        assertEquals(0, programme.getActivities().size(), "Activities list should initially be empty.");
-    }
+    public void testProgrammeValidationValidScenario() {
+        // Create subject modules with courses
+        List<Course> coursesModule1 = new ArrayList<>();
+        coursesModule1.add(new Course(10, false, null)); // Non-basic course
+        coursesModule1.add(new Course(10, false, null)); // Non-basic course
+        Project projectModule1 = new Project(false, false, null);
 
-    @Test
-    void testAddProject() {
-        Programme programme = new Programme();
-        Project project = new Project(false, true); // Adding a basic project
-        programme.addActivity(project);
+        SubjectModule subjectModule1 = new SubjectModule(coursesModule1, projectModule1);
 
-        assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a project.");
-        assertTrue(programme.getActivities().get(0) instanceof Project, "The first activity should be a Project.");
-        assertFalse(((Project)programme.getActivities().get(0)).isBachelorProject(), "Project should not be a bachelor project.");
-        assertTrue(((Project)programme.getActivities().get(0)).isBasicProject(), "Project should be a basic project.");
-    }
+        List<Course> coursesModule2 = new ArrayList<>();
+        coursesModule2.add(new Course(10, false, null)); // Non-basic course
+        coursesModule2.add(new Course(10, false, null)); // Non-basic course
+        Project projectModule2 = new Project(false, false, null);
 
-    @Test
-    void testAddCourse() {
-        Programme programme = new Programme();
-        Course course = new Course(10, true); // Adding a basic course with 10 ECTS
-        programme.addActivity(course);
+        SubjectModule subjectModule2 = new SubjectModule(coursesModule2, projectModule2);
 
-        assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a course.");
-        assertTrue(programme.getActivities().get(0) instanceof Course, "The first activity should be a Course.");
-        assertEquals(10, ((Course)programme.getActivities().get(0)).getECTS(), "Course should have 10 ECTS.");
-        assertTrue(((Course)programme.getActivities().get(0)).isBasicCourse(), "Course should be a basic course.");
-    }
-
-    @Test
-    void testValidProgramme() {
+        // Create the programme
         Programme programme = new Programme();
 
-        // Add required projects: 3 basic, 2 non-basic, 1 bachelor
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(true, false));
+        // Add subject modules' activities
+        programme.addActivity(subjectModule1.getCourses().get(0));
+        programme.addActivity(subjectModule1.getCourses().get(1));
+        programme.addActivity(subjectModule1.getProject());
 
-        // Add courses to meet ECTS requirements: 4 basic (total 40 ECTS), 1 non-basic (10 ECTS)
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, false));
+        programme.addActivity(subjectModule2.getCourses().get(0));
+        programme.addActivity(subjectModule2.getCourses().get(1));
+        programme.addActivity(subjectModule2.getProject());
+
+        // Add basic courses to the programme
+        programme.addActivity(new Course(10, true, null)); // Basic course
+        programme.addActivity(new Course(10, true, null)); // Basic course
+        programme.addActivity(new Course(10, true, null)); // Basic course
+        programme.addActivity(new Course(10, true, null)); // Basic course
+
+        // Add a bachelor project
+        programme.addActivity(new Project(true, false, null)); // Bachelor project
+
+        // Add basic projects (should be 3 in total)
+        programme.addActivity(new Project(false, true, null)); // Basic project
+        programme.addActivity(new Project(false, true, null)); // Basic project
+        programme.addActivity(new Project(false, true, null)); // Basic project
 
         // Validate the programme
-        assertTrue(programme.isValid(), "The programme should be valid with the correct number of projects and ECTS points.");
+        assertTrue(programme.isValid(), "Programme should be valid");
     }
 
     @Test
-    void testInvalidProgrammeDueToProjects() {
+    public void testInvalidProgrammeNotEnoughBasicCourses() {
         Programme programme = new Programme();
 
-        // Add insufficient basic projects
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, true));
+        // Add courses but not enough basic ECTS (only 30 instead of required 40)
+        programme.addActivity(new Course(10, true, null));
+        programme.addActivity(new Course(10, true, null));
+        programme.addActivity(new Course(10, false, null)); // Non-basic course
 
-        // Add other required projects
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(true, false));
-
-        // Add valid courses
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, false));
-
-        // Validate the programme
-        assertFalse(programme.isValid(), "The programme should be invalid due to insufficient basic projects.");
+        assertFalse(programme.isValid(), "Programme should be invalid due to insufficient basic course ECTS");
     }
 
     @Test
-    void testInvalidProgrammeDueToECTS() {
+    public void testInvalidProgrammeIncorrectNumberOfProjects() {
         Programme programme = new Programme();
 
-        // Add all required projects
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, true));
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(false, false));
-        programme.addActivity(new Project(true, false));
+        // Add projects, but missing one basic project
+        programme.addActivity(new Project(false, true, null)); // Basic project
+        programme.addActivity(new Project(true, false, null)); // Bachelor project
 
-        // Add courses with insufficient ECTS (total < 50)
-        programme.addActivity(new Course(10, true));
-        programme.addActivity(new Course(10, true));
-
-        // Validate the programme
-        assertFalse(programme.isValid(), "The programme should be invalid due to insufficient total ECTS points.");
+        assertFalse(programme.isValid(), "Programme should be invalid due to incorrect number of projects");
     }
 
     @Test
-    void testAddAndRemove() {
+    public void testSubjectModuleValidation() {
+        List<Course> courses = new ArrayList<>();
+        courses.add(new Course(10, false, null));
+        courses.add(new Course(10, false, null));
+        Project project = new Project(false, false, null);
+
+        SubjectModule subjectModule = new SubjectModule(courses, project);
+
+        assertEquals(20, subjectModule.getTotalCourseECTS(), "Total ECTS for courses should be 20");
+        assertNotNull(subjectModule.getProject(), "Subject module should have a project");
+    }
+
+    @Test
+    public void testInvalidSubjectModuleECTS() {
+        List<Course> courses = new ArrayList<>();
+        courses.add(new Course(5, false, null)); // Not enough ECTS
+        courses.add(new Course(5, false, null)); // Not enough ECTS
+        Project project = new Project(false, false, null);
+
+        SubjectModule subjectModule = new SubjectModule(courses, project);
         Programme programme = new Programme();
 
-        // Add a course and remove it
-        Course course = new Course(10, true);
-        programme.addActivity(course);
-        assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a course.");
+        // Adding invalid subject module to the programme
+        programme.addActivity(subjectModule.getCourses().get(0));
+        programme.addActivity(subjectModule.getCourses().get(1));
+        programme.addActivity(subjectModule.getProject());
 
-        // Simulate removal by setting a new list
-        programme.setActivities(new ArrayList<>());
-        assertEquals(0, programme.getActivities().size(), "Programme should have no activities after removal.");
+        assertFalse(programme.isValid(), "Programme should be invalid due to insufficient subject module ECTS");
     }
 }
