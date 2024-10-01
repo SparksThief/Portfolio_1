@@ -1,14 +1,11 @@
-// Skaber Course subclass der extender (nedarver) StudyActivity.
 public class Course extends StudyActivity {
     private boolean isBasicCourse;
+    private SubjectModule subjectModule; // Reference til SubjectModule
 
-    //Constructor
-    public Course(int ECTS, boolean isBasicCourse) {
-        super(ECTS); //Kalder konstruktøren fra StudyActivity klassen
-        if (ECTS !=5 && ECTS !=10) {
-            throw new IllegalArgumentException("Courses must have either 5 or 10 ECTS");
-        }
+    public Course(int ECTS, boolean isBasicCourse, SubjectModule subjectModule) {
+        super(ECTS);
         this.isBasicCourse = isBasicCourse;
+        this.subjectModule = subjectModule;
     }
 
     public boolean isBasicCourse() {
@@ -17,5 +14,13 @@ public class Course extends StudyActivity {
 
     public void setBasicCourse(boolean isBasicCourse) {
         this.isBasicCourse = isBasicCourse;
+    }
+
+    public SubjectModule getSubjectModule() {
+        return subjectModule;
+    }
+
+    public void setSubjectModule(SubjectModule subjectModule) {
+        this.subjectModule = subjectModule;
     }
 }
