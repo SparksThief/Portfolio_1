@@ -1,101 +1,78 @@
+// Importerer ArrayList og List, så vi kan implementere de forskellige study activities som en liste.
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashSet;
-import java.util.Set;
 
+// Tilføjer ny class med variablen activities som er en liste af typen StudyActivity, som er en class.
 public class Programme {
 
     private List<StudyActivity> activities;
 
-    //Constructor
-    // Initialiser en ArrayList, fordi et program kan indeholde mange aktiviteter
+    // Constructor
+    // Initialiserer en ArrayList, fordi et program kan indeholde mange aktiviteter.
     public Programme() {
         this.activities = new ArrayList<>();
     }
 
-    //Metode til at tilføje aktiviteter
-    // Parameteren 'activity' kan enten være et course eller project
-    // fordi vi bruger inheritance og arver fra StudyActivity
+    /* Metode til at tilføje aktiviteter
+     Parameteren 'activity' kan enten være et course eller project fordi vi bruger inheritance
+     og arver fra StudyActivity.
+     */
     public void addActivity(StudyActivity activity) {
         activities.add(activity);
     }
 
-    // Validerer om bachelorprogrammet er gyldigt ifølge alle reglerne
+
     // Validerer om bachelorprogrammet er gyldigt
     public boolean isValid() {
         int projectCount = 0;
         int basicProjectCount = 0;
         int bachelorProjectCount = 0;
-        int subjectModuleProjectCount = 0;
         int totalCourseECTS = 0;
         int basicCourseECTS = 0;
 
-        Set<StudyActivity> uniqueActivities = new HashSet<>(activities);
-
-        // Tjekker for dublikanter
-        if (uniqueActivities.size() != activities.size()) {
-            System.out.println("Activities found twice");
-            return false;
-        }
-
-        // Gennemgå alle aktiviteter
+        // Gennemgår hver aktivitet array-listen 'activities' med for each loop med if statements.
         for (StudyActivity activity : activities) {
-            if (activity instanceof Project) {
-                Project project = (Project) activity;
-                projectCount++;
+            if (activity instanceof Project) { // Tjekker om activity er en instance of Project class.
+                Project project = (Project) activity; // Caster til typen Project.
+                projectCount++; // Tæller op for hvert projekt i listen.
 
-                if (project.isBachelorProject()) {
-                    bachelorProjectCount++;
-                } else if (project.isBasicProject()) {
-                    basicProjectCount++;
-                } else {
-                    subjectModuleProjectCount++;
+                if (project.isBachelorProject()) { // Tjekker om projektet er et bachelor projekt.
+                    bachelorProjectCount++; // Tæller op hvis det er.
+                } else if (project.isBasicProject()) { // Tjekker om projektet er et basisprojekt.
+                    basicProjectCount++; // Tæller op hvis det er.
                 }
-            } else if (activity instanceof Course) {
-                Course course = (Course) activity;
-                totalCourseECTS += course.getECTS();
+            } else if (activity instanceof Course) { // Tjekker om activity er en instance of Course class.
+                Course course = (Course) activity; // Caster til typen Course.
+                totalCourseECTS += course.getECTS(); // Lægger antal ECTS sammen med totalCourseECTS.
 
-                if (course.isBasicCourse()) {
-                    basicCourseECTS += course.getECTS();
+                if (course.isBasicCourse()) { // Tjekker om kurset er et basic course.
+                    basicCourseECTS += course.getECTS(); // Lægger antal ECTS sammen med basicCourseECTS.
                 }
             }
         }
 
 
-        /*
-
-        Valideringsregler nedenunder.
-        Vi tjekker om:
-        - Der er 6 projekter i alt.
-        - Om 3 af projekterne er grundprojekter
-        - Om 1 af projekterne er bachelorprojekt
-
-        Det kan sikkert gøres pænere, men min hjerne gik død her.
-        Det med grundprojekter drillede og skulle bare have det -
-        til at virke :-)
-
-        Vi laver 2 større if/else checks, 1 for projekter og 1 for point */
-
+        // If statements til at validere om bachelorprogrammet er gyldigt ifølge alle reglerne.
         boolean validProjects = true;
 
-        if (projectCount != 6) {
+        if (projectCount != 6) { // Der skal være 6 projekter i alt.
             validProjects = false;
             System.out.println("You need 6 projects, but you have " + projectCount + ".");
         }
 
-        if (basicProjectCount != 3) {
+        if (basicProjectCount != 3) { // Der skal være 3 basisprojekter.
             validProjects = false;
             System.out.println("You need 3 basic projects, but you have " + basicProjectCount + ".");
         }
 
-        if (bachelorProjectCount != 1) {
+        if (bachelorProjectCount != 1) { // Der skal være 1 bachelorprojekt.
             validProjects = false;
             System.out.println("You need 1 bachelor project, but you have " + bachelorProjectCount + ".");
         }
 
         System.out.println("Valid projects: " + validProjects);
 
-        // Tjek om der er mindst 50 ECTS samlet og mindst 40 ECTS fra grundkurser
+        // If statements til at tjekke om der er mindst 50 ECTS samlet og mindst 40 ECTS fra grundkurser.
         boolean validCourses = true;
 
         if (totalCourseECTS < 50) {
@@ -110,16 +87,16 @@ public class Programme {
 
         System.out.println("Valid courses: " + validCourses);
 
-        // Hvis begge valideringer er opfyldt, returneres true, ellers false
+        // Hvis begge valideringer er opfyldt, returneres true, ellers false.
         return validProjects && validCourses;
     }
 
-    //Getter til at hente listen af aktiviter
+    // Getter så andre dele af programmet kan hente/læse listen af aktiviter.
     public List<StudyActivity> getActivities() {
         return activities;
     }
 
-    //Setter til at sætte en ny liste af aktiviter
+    // Setter så andre dele af programmet kan ændre/opdatere listen med aktiviter.
     public void setActivities(List<StudyActivity> activities) {
         this.activities = activities;
     }
