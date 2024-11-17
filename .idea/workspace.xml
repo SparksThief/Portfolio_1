@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Sidste push af isValid opdatering">
+    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Programme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Programme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudyActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,9 @@
     &quot;accountId&quot;: &quot;66b9c2f8-ba1b-4bcb-8494-f3bfb255ea15&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -48,24 +54,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.ProgrammeTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ProgrammeTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,7 +94,7 @@
       <workItem from="1727701600282" duration="4144000" />
       <workItem from="1731003192726" duration="1397000" />
       <workItem from="1731004607801" duration="5347000" />
-      <workItem from="1731847704230" duration="311000" />
+      <workItem from="1731847704230" duration="9089000" />
     </task>
     <task id="LOCAL-00001" summary="Tilføjelse af kommentarer">
       <option name="closed" value="true" />
@@ -103,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731847638073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="isValid method merged til main. branch slettet.">
+      <option name="closed" value="true" />
+      <created>1731848045411</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731848045411</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +141,9 @@
     <MESSAGE value="Tilføjelse af test, virker stadig ikke helt." />
     <MESSAGE value="Tilføjelse af kommentarer" />
     <MESSAGE value="Sidste push af isValid opdatering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sidste push af isValid opdatering" />
+    <MESSAGE value="isValid method merged til main. branch slettet." />
+    <MESSAGE value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

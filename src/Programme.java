@@ -30,7 +30,7 @@ public class Programme {
         int totalCourseECTS = 0;
         int basicCourseECTS = 0;
 
-        // Gennemgår hver aktivitet array-listen 'activities' med for each loop med if statements.
+        // Gennemgår hver aktivitet i array-listen 'activities' med for each loop med if statements.
         for (StudyActivity activity : activities) {
             if (activity instanceof Project) { // Tjekker om activity er en instance of Project class.
                 Project project = (Project) activity; // Caster til typen Project.
@@ -62,10 +62,10 @@ public class Programme {
 
         // Validerer om reglerne for courses overholdes.
         boolean validCourses = false;
-        if (totalCourseECTS >= 50 && basicCourseECTS >= 40) {
+        if (totalCourseECTS == 90 && basicCourseECTS >= 40) {
             validCourses = true;
         } else {
-            System.out.println("ECTS requirements not met.");
+            System.out.println("Course ECTS requirements not met. Total course ECTS: " + totalCourseECTS);
         }
         System.out.println("Valid courses: " + validCourses);
 

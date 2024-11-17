@@ -1,7 +1,7 @@
 public abstract class StudyActivity {
     protected int ECTS;
 
-    //Constructor
+    // Constructor
     public StudyActivity(int ECTS) {
         this.ECTS = ECTS;
     }
