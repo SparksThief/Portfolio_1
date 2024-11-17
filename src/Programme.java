@@ -51,43 +51,26 @@ public class Programme {
             }
         }
 
-
-        // If statements til at validere om bachelorprogrammet er gyldigt ifølge alle reglerne.
-        boolean validProjects = true;
-
-        if (projectCount != 6) { // Der skal være 6 projekter i alt.
-            validProjects = false;
-            System.out.println("You need 6 projects, but you have " + projectCount + ".");
+        // Validerer om reglerne for projects er overholdt.
+        boolean validProjects = false;
+        if (projectCount == 6 && basicProjectCount == 3 && bachelorProjectCount == 1) {
+            validProjects = true;
+        } else {
+            System.out.println("Project requirements not met.");
         }
-
-        if (basicProjectCount != 3) { // Der skal være 3 basisprojekter.
-            validProjects = false;
-            System.out.println("You need 3 basic projects, but you have " + basicProjectCount + ".");
-        }
-
-        if (bachelorProjectCount != 1) { // Der skal være 1 bachelorprojekt.
-            validProjects = false;
-            System.out.println("You need 1 bachelor project, but you have " + bachelorProjectCount + ".");
-        }
-
         System.out.println("Valid projects: " + validProjects);
 
-        // If statements til at tjekke om der er mindst 50 ECTS samlet og mindst 40 ECTS fra grundkurser.
-        boolean validCourses = true;
-
-        if (totalCourseECTS < 50) {
-            validCourses = false;
-            System.out.println("You need at least 50 ECTS from courses, but you have " + totalCourseECTS + ".");
+        // Validerer om reglerne for courses overholdes.
+        boolean validCourses = false;
+        if (totalCourseECTS >= 50 && basicCourseECTS >= 40) {
+            validCourses = true;
+        } else {
+            System.out.println("ECTS requirements not met.");
         }
-
-        if (basicCourseECTS < 40) {
-            validCourses = false;
-            System.out.println("You need at least 40 ECTS from basic courses, but you have " + basicCourseECTS + ".");
-        }
-
         System.out.println("Valid courses: " + validCourses);
 
-        // Hvis begge valideringer er opfyldt, returneres true, ellers false.
+        /* Hvis reglerne er overholdt for både projects og courses har vi et gyldigt bachelor programme
+         og isValid returneres som true. */
         return validProjects && validCourses;
     }
 

@@ -29,9 +29,9 @@ public class Main {
         // if(isValidProgramme) tjekker om programmet overholder reglerne
         // else er hvis programmet ikke overholder reglerne
         if (programme.isValid()) {
-            System.out.println("Bachelor programme is valid");
+            System.out.println("Bachelor programme is valid.");
         } else {
-            System.out.println("Bachelor programme is not valid. Check requirements");
+            System.out.println("Bachelor programme is not valid. Check requirements.");
         }
 
     }
