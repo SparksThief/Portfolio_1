@@ -13,8 +13,8 @@ public class Main {
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(true, false));
 
-        // Tilføjelse af kursus objekter - 4 basiskurser + 1 valgkursus (=50 ects),
-        // 4 vilkårlige (svarer til fagmodulkurser) (=40 ects) */
+        /* Tilføjelse af kursus objekter - 4 basiskurser + 1 valgkursus (=50 ects),
+         4 vilkårlige (svarer til fagmodulkurser) (=40 ects) */
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));

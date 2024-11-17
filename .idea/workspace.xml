@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Programme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Programme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudyActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +89,7 @@
       <workItem from="1727701600282" duration="4144000" />
       <workItem from="1731003192726" duration="1397000" />
       <workItem from="1731004607801" duration="5347000" />
-      <workItem from="1731847704230" duration="9089000" />
+      <workItem from="1731847704230" duration="9196000" />
     </task>
     <task id="LOCAL-00001" summary="Tilføjelse af kommentarer">
       <option name="closed" value="true" />
@@ -120,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731848045411</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90.">
+      <option name="closed" value="true" />
+      <created>1731857981263</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731857981263</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +146,8 @@
     <MESSAGE value="Sidste push af isValid opdatering" />
     <MESSAGE value="isValid method merged til main. branch slettet." />
     <MESSAGE value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
+    <MESSAGE value="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
