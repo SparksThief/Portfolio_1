@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="meeeget lille rettelse">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Programme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Programme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProgrammeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgrammeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudyActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SubjectModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubjectModule.java" afterDir="false" />
-    </list>
+    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Rettet kommentarer, rettet ProgrammeTest og småfejl." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +91,7 @@
       <workItem from="1731004607801" duration="5347000" />
       <workItem from="1731847704230" duration="9196000" />
       <workItem from="1731859033461" duration="33000" />
-      <workItem from="1731944886322" duration="10885000" />
+      <workItem from="1731944886322" duration="11297000" />
     </task>
     <task id="LOCAL-00001" summary="Tilføjelse af kommentarer">
       <option name="closed" value="true" />
@@ -142,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731859062409</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Rettet kommentarer, rettet ProgrammeTest og småfejl.">
+      <option name="closed" value="true" />
+      <created>1731957392228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731957392228</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +166,8 @@
     <MESSAGE value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
     <MESSAGE value="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
     <MESSAGE value="meeeget lille rettelse" />
-    <option name="LAST_COMMIT_MESSAGE" value="meeeget lille rettelse" />
+    <MESSAGE value="Rettet kommentarer, rettet ProgrammeTest og småfejl." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rettet kommentarer, rettet ProgrammeTest og småfejl." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
