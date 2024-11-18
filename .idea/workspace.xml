@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
+    <list default="true" id="ee199ec1-7e7a-4fdd-8bd3-2c4b47ac1043" name="Changes" comment="meeeget lille rettelse">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Programme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Programme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProgrammeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgrammeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubjectModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubjectModule.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,27 +58,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ProgrammeTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ProgrammeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,6 +99,8 @@
       <workItem from="1731003192726" duration="1397000" />
       <workItem from="1731004607801" duration="5347000" />
       <workItem from="1731847704230" duration="9196000" />
+      <workItem from="1731859033461" duration="33000" />
+      <workItem from="1731944886322" duration="10885000" />
     </task>
     <task id="LOCAL-00001" summary="Tilføjelse af kommentarer">
       <option name="closed" value="true" />
@@ -123,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731857981263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="meeeget lille rettelse">
+      <option name="closed" value="true" />
+      <created>1731859062409</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731859062409</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +166,8 @@
     <MESSAGE value="isValid method merged til main. branch slettet." />
     <MESSAGE value="Tilføjet så det tilføjede bachelorprogram i main svarer til 180 ECTS" />
     <MESSAGE value="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet få kommentarer og rettet totalCourse ects i Programme til 90." />
+    <MESSAGE value="meeeget lille rettelse" />
+    <option name="LAST_COMMIT_MESSAGE" value="meeeget lille rettelse" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

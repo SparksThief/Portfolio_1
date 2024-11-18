@@ -4,7 +4,7 @@ public class Course extends StudyActivity {
 
     // Constructor
     public Course(int ECTS, boolean isBasicCourse) {
-        super(ECTS); // Kalder constructor fra StudyActivity class for at kunne videregive (ECTS);.
+        super(ECTS); // Kalder constructor fra StudyActivity class for at kunne videregive (ECTS).
         this.isBasicCourse = isBasicCourse; // Initialiserer instance variabel.
     }
 

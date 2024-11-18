@@ -1,16 +1,17 @@
 public abstract class StudyActivity {
     protected int ECTS;
 
-    // Constructor
+    // Constructor.
     public StudyActivity(int ECTS) {
         this.ECTS = ECTS;
     }
 
-    // Bruges til at hente ECTS, getter
+    // Bruges til at hente ECTS, getter.
     public int getECTS() {
         return ECTS;
     }
-    // Setter
+
+    // Setter.
     public void setECTS(int ECTS) {
         this.ECTS = ECTS;
     }

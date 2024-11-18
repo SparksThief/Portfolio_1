@@ -11,7 +11,7 @@ public class Project extends StudyActivity {
         this.isBasicProject = isBasicProject;
     }
 
-     // Getter så andre dele af programmet kan hente/læse værdien kan hentes/læses .
+    // Getter så andre dele af programmet kan hente/læse værdien kan hentes/læses.
     public boolean isBasicProject() {
         return isBasicProject;
     }

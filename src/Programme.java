@@ -13,16 +13,14 @@ public class Programme {
         this.activities = new ArrayList<>();
     }
 
-    /* Metode til at tilføje aktiviteter
-     Parameteren 'activity' kan enten være et course eller project fordi vi bruger inheritance
-     og arver fra StudyActivity.
-     */
+    /* Metode til at tilføje aktiviteter til listen.
+     Parameteren 'activity' kan enten være et course eller project-object pga. polymorfi. */
     public void addActivity(StudyActivity activity) {
         activities.add(activity);
     }
 
 
-    // Validerer om bachelorprogrammet er gyldigt
+    // Validerer om bachelorprogrammet er gyldigt.
     public boolean isValid() {
         int projectCount = 0;
         int basicProjectCount = 0;
@@ -30,13 +28,13 @@ public class Programme {
         int totalCourseECTS = 0;
         int basicCourseECTS = 0;
 
-        // Gennemgår hver aktivitet i array-listen 'activities' med for each loop med if statements.
+        // Gennemgår hver aktivitet i array-listen 'activities' med for each loop med if-statements.
         for (StudyActivity activity : activities) {
             if (activity instanceof Project) { // Tjekker om activity er en instance of Project class.
                 Project project = (Project) activity; // Caster til typen Project.
                 projectCount++; // Tæller op for hvert projekt i listen.
 
-                if (project.isBachelorProject()) { // Tjekker om projektet er et bachelor projekt.
+                if (project.isBachelorProject()) { // Tjekker om projektet er et bachelorprojekt.
                     bachelorProjectCount++; // Tæller op hvis det er.
                 } else if (project.isBasicProject()) { // Tjekker om projektet er et basisprojekt.
                     basicProjectCount++; // Tæller op hvis det er.
@@ -51,7 +49,7 @@ public class Programme {
             }
         }
 
-        // Validerer om reglerne for projects er overholdt.
+        // Validerer om kravene for projekter overholdes.
         boolean validProjects = false;
         if (projectCount == 6 && basicProjectCount == 3 && bachelorProjectCount == 1) {
             validProjects = true;
@@ -60,7 +58,7 @@ public class Programme {
         }
         System.out.println("Valid projects: " + validProjects);
 
-        // Validerer om reglerne for courses overholdes.
+        // Validerer om kravene for kurser overholdes.
         boolean validCourses = false;
         if (totalCourseECTS == 90 && basicCourseECTS >= 40) {
             validCourses = true;
@@ -74,12 +72,12 @@ public class Programme {
         return validProjects && validCourses;
     }
 
-    // Getter så andre dele af programmet kan hente/læse listen af aktiviter.
+    // Getter så andre dele af programmet kan hente/læse listen af aktiviteter.
     public List<StudyActivity> getActivities() {
         return activities;
     }
 
-    // Setter så andre dele af programmet kan ændre/opdatere listen med aktiviter.
+    // Setter så andre dele af programmet kan ændre/opdatere listen med aktiviteter.
     public void setActivities(List<StudyActivity> activities) {
         this.activities = activities;
     }

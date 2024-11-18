@@ -1,7 +1,7 @@
-// Importerer List, så vi kan implementere de forskellige fagmoduler/courses.
+// Importerer List, så vi kan implementere de forskellige fagmodulkurser.
 import java.util.List;
 
-// Tilføjer ny class med variablen courses som er en liste af typen Course, samt variablen project af typen Project
+// Tilføjer ny class med variablen 'courses' som er en liste af typen Course, samt variablen 'project' af typen Project.
 public class SubjectModule {
     private List<Course> courses;
     private Project project;
@@ -10,6 +10,7 @@ public class SubjectModule {
     public List<Course> getCourses() {
         return courses;
     }
+
     // Setter - Giver andre klasser adgang til at ændre/opdatere værdien af variablen courses.
     public void setCourses(List<Course> courses) {
         this.courses = courses;
@@ -19,6 +20,7 @@ public class SubjectModule {
     public Project getProject(){
         return project;
     }
+
     // Setter så andre dele af programmet kan opdatere variablen.
     public void setProject(Project project) {
         this.project = project;

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProgrammeTest {
 
     @Test
-    // Tester at en ny Programme-instans korrekt initializer sin liste af aktiviteter
+    // Tester at en ny Programme instance initialiserer sin liste af aktiviteter korrekt.
     void testProgrammeInitialization() {
         Programme programme = new Programme();
         assertNotNull(programme.getActivities(), "Activities list should be initialized.");
@@ -14,14 +14,14 @@ public class ProgrammeTest {
 
     @Test
     /*
-     Tester tilføjelse af Project til et Programme
-     Bekræfter, at antallet af aktiviteter stiger med en
-     Tjekker aktivitet af typen Project
-     Verificerer at programmet ikke er et bachelor project men et basis project
+     Tester tilføjelse af Project til et Programme.
+     Bekræfter, at antallet af aktiviteter stiger med en.
+     Tjekker aktivitet af typen Project.
+     Verificerer at programmet ikke er et bachelorprojekt men et basisprojekt.
     */
     void testAddProject() {
         Programme programme = new Programme();
-        Project project = new Project(false, true); // Adding a basic project
+        Project project = new Project(false, true); // Tilføjer et basisprojekt.
         programme.addActivity(project);
 
         assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a project.");
@@ -32,13 +32,13 @@ public class ProgrammeTest {
 
     @Test
     /*
-     Tester tilføjelse af et Course til et Programme
-     Bekræfter, at aktiviteten er en Course med 10 ECTS-point
-     Verificerer, at kurset er et basic course
+     Tester tilføjelse af et Course til et Programme.
+     Bekræfter, at aktiviteten er en Course med 10 ECTS point.
+     Verificerer, at kurset er et basiskursus.
     */
     void testAddCourse() {
         Programme programme = new Programme();
-        Course course = new Course(10, true); // Adding a basic course with 10 ECTS
+        Course course = new Course(10, true); // Adding a basic course with 10 ECTS.
         programme.addActivity(course);
 
         assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a course.");
@@ -48,70 +48,82 @@ public class ProgrammeTest {
     }
 
     @Test
-    // Tester at Programme bliver betragtet som gyldigt, hvis der er nok Projekter og Kurser
+    // Tester at Programme bliver betragtet som gyldigt, hvis der er nok projekter og kurser.
     void testValidProgramme() {
         Programme programme = new Programme();
-    // Tilføjer 3 “basic projects”, 2 “non-basic projects”, og 1 bachelorprojekt.
+        // Tilføjer 3 basisprojekter, 2 vilkårlige projekter, og 1 bachelorprojekt.
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(true, false));
-    // Tilføjer 4 “basic courses” og 1 “non-basic course”, hvilket opfylder ECTS-kravet.
+        // Tilføjer 4 basiskurser, 1 valgkursus som er et basiskursus, og 4 vilkårlige kurser, hvilket opfylder ECTS kravet.
+        programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, false));
-    // Bekræfter, at isValid() returnerer true.
+        programme.addActivity(new Course(10, false));
+        programme.addActivity(new Course(10, false));
+        programme.addActivity(new Course(10, false));
+        // Bekræfter, at isValid() returnerer true.
         assertTrue(programme.isValid(), "The programme should be valid with the correct number of projects and ECTS points.");
     }
 
     @Test
-    // Tester, at et Programme bliver betragtet som ugyldigt, hvis der er for få Projekter og Kurser
+    // Tester, at et Programme bliver betragtet som ugyldigt, hvis der er for få projekter.
     void testInvalidProgrammeDueToProjects() {
         Programme programme = new Programme();
 
+        // Tilføjer 2 basisprojekter, 2 vilkårlige og 1 bachelorprojekt (5/6).
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, true));
-
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(true, false));
 
+        // Tilføjer 4 basiskurser, 1 valgkursus og 4 vilkårlige, så programmets ECTS af kurser svarer til 90 ECTS.
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, false));
-    // Bekræfter, at isValid() returnerer false på grund af manglende projekter.
+        programme.addActivity(new Course(10, false));
+        programme.addActivity(new Course(10, false));
+        programme.addActivity(new Course(10, false));
+        programme.addActivity(new Course(10, false));
+
+        // Bekræfter, at isValid() returnerer false på grund af manglende projekter.
         assertFalse(programme.isValid(), "The programme should be invalid due to insufficient basic projects.");
     }
 
     @Test
-    // Tester, at Programmet bliver betragtet som ugyldigt, hvis der ikke er nok ECT point
+    // Tester, at Programmet bliver betragtet som ugyldigt, hvis der ikke er nok ECTS point.
     void testInvalidProgrammeDueToECTS() {
         Programme programme = new Programme();
-    // Tilføjer alle nødvendige projekter
+        // Tilføjer alle 6 nødvendige projekter
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, true));
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(false, false));
         programme.addActivity(new Project(true, false));
-    // Tilføjer kun to kurser med 10 ECTS-point hver (total < 50).
+
+        // Tilføjer kun to kurser med 10 ECTS point hver (total < 90 ECTS).
         programme.addActivity(new Course(10, true));
         programme.addActivity(new Course(10, true));
-    // Bekræfter, at isValid() returnerer false på grund af utilstrækkelige ECTS-point.
+
+        // Bekræfter, at isValid() returnerer false på grund af utilstrækkelige ECTS point.
         assertFalse(programme.isValid(), "The programme should be invalid due to insufficient total ECTS points.");
     }
 
     @Test
-    // Tester tilføjelse og fjernelse af en aktivitet i Programme
+    // Tester tilføjelse og fjernelse af en aktivitet i Programme.
     void testAddAndRemove() {
         Programme programme = new Programme();
-    // Tilføjer et Course og tjekker, at aktiviteten tilføjes korrekt
+        // Tilføjer et Course og tjekker, at aktiviteten tilføjes korrekt.
         Course course = new Course(10, true);
         programme.addActivity(course);
         assertEquals(1, programme.getActivities().size(), "Programme should have one activity after adding a course.");
